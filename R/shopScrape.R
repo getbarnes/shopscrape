@@ -12,6 +12,8 @@
 #' @import stringr
 #' @import ggplot2
 #' @import rvest
+#' @import shiny
+#'
 #' @examples
 #' \dontrun{
 #' shopScrape(url, node, url2, node2)
@@ -34,7 +36,7 @@ shopScrape <- function(url,node, url2, node2){
   tracks <- list(Store1, Store2)
   df <- do.call(rbind, mapply(transform, tracks,Store=seq_along(tracks), SIMPLIFY = FALSE))
 
-  library(DT)
+
 
   ui <- basicPage(
     h2("Store Data"),
