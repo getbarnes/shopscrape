@@ -1,0 +1,49 @@
+---
+title: "shopScrape Vinette"
+author: "Mariah Barnes"
+output: rmarkdown::html_vignette
+desctiption: This package is created for price analysis of shopping sites. In this package will be data frame, currency, and parsing functions for webscrapping. 
+vignette: >
+  %\VignetteIndexEntry{shopScrape Vinette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shopscrape)
+```
+##Installation
+Run the command
+```
+Install.packages("shopscrape)
+```
+## Functions
+  * `shopScrape()` scrapes data and puts it in interactive table.
+  Allows you to search the table and find relatable items and compare prices.
+```{r}
+shopScrape("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a","https://www.zara.com/us/en/woman-must-haves-l4503.html?v1=1609213", ".price__amount-current , #main .link span")
+```
+  
+  * `basicPrice()` scraped price node and put it in basic histogram .
+  
+  * `currencyFunc()` changes currency values from USD, Peso, and Euro.
+```{r}
+currencyFunc(usd= 2.78)
+```
+  
+  * `priceAna()` scrapes prices and turn category means into histogram. 
+```{r}
+priceAna("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
+```
+  
+  * `priceNum()` scrapes prices and turns them into numerical values.
+
+  * `samel()` changes the number of the rows and repeats data to get two lists of same length. 
+  * `samelNa()` changes the number of the rows and add NA's to get two lists of same length.
