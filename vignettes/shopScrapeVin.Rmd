@@ -32,7 +32,10 @@ shopScrape("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQ
 ```
   
   * `basicPrice()` scraped price node and put it in basic histogram .
-  
+```{r}
+basicPrice("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
+```
+ 
   * `currencyFunc()` changes currency values from USD, Peso, and Euro.
 ```{r}
 currencyFunc(usd= 2.78)
@@ -45,6 +48,14 @@ priceAna("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEi
   
   * `priceNum()` scrapes prices and turns them into numerical values.
 
+```{r}
+resultsZara <- read_html("https://www.zara.com/us/en/woman-must-haves-l4503.html?v1=1609213")
+
+
+vals <- priceNum(resultsZara,".price__amount-current")
+vals
+
+```
    
   * `samelNa()` changes the number of the rows and add NA's to get two lists of same length.
   
