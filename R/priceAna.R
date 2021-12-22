@@ -5,6 +5,10 @@
 #'
 #' @return histogram of means for all the types of items obtained in node
 #' @export
+#' @import dplyr
+#' @import stringr
+#' @import ggplot2
+#' @import rvest
 #'
 #' @examples
 #'

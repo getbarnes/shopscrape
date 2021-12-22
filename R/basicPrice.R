@@ -5,6 +5,13 @@
 #'
 #' @return basic histogram of prices obtained from node
 #' @export
+#' @import dplyr
+#' @import stringr
+#' @import ggplot2
+#' @import rvest
+#'
+#'
+#'
 #'
 #' @examples \dontrun{
 #' basicPrice(url, node)

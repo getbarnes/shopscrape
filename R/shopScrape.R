@@ -8,7 +8,10 @@
 #'
 #' @return data frame
 #' @export
-#'
+#' @import dplyr
+#' @import stringr
+#' @import ggplot2
+#' @import rvest
 #' @examples
 #' \dontrun{
 #' shopScrape(url, node, url2, node2)

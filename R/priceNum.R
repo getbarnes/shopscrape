@@ -5,6 +5,10 @@
 #'
 #' @return parsed numerical values
 #' @export
+#'  @import dplyr
+#' @import stringr
+#' @import ggplot2
+#' @import rvest
 #'
 #' @examples
 #' \dontrun{

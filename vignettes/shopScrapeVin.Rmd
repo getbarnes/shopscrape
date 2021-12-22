@@ -45,5 +45,13 @@ priceAna("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEi
   
   * `priceNum()` scrapes prices and turns them into numerical values.
 
-  * `samel()` changes the number of the rows and repeats data to get two lists of same length. 
+   
   * `samelNa()` changes the number of the rows and add NA's to get two lists of same length.
+  
+```{r}
+x<- c(1:10)
+y<- c(1:9)
+
+samelNA(x,y)
+```
+  
