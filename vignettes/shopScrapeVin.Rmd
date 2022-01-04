@@ -1,12 +1,13 @@
 ---
 title: "shopScrape Vignette"
 author: "Mariah Barnes"
+runtime: shiny
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{shopScrape Vignette}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
-runtime: shiny
+
 ---
 
 ```{r, include = FALSE}
@@ -16,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 ##Introduction
-This package is created for price analysis of shopping sites.The motivation behind it is the problems that shoppers face when looking at two different sites and wanting to easily compare the prices. In this package will be ways to compare prices in a data frame while also searching the table. Other functions includes web scrapping for price bar plots, currency changes, and parsing numbers. This can be used for big shopping events like black Friday or even better cyber Monday.In the future I would like to update the currency function to take in more currencies and update the functionality of the bar plots. 
+This package is created for price analysis of shopping sites.The motivation behind it is the problems that shoppers face when looking at two different sites and wanting to easily compare the prices. In this package will be ways to compare prices in a data frame while also searching the table. Other functions includes web scrapping for price bar plots, currency changes, and parsing numbers. This can be used for big shopping events like black Friday or even better cyber Monday. In the future I would like to update the currency function to take in more currencies and update the functionality of the bar plots. 
 
 ```{r setup}
 library(shopscrape)
@@ -54,17 +55,18 @@ resultsZara <- read_html("https://www.zara.com/us/en/woman-must-haves-l4503.html
 
 
 vals <- priceNum(resultsZara,".price__amount-current")
-vals
+
 
 ``` 
 
-###Currency Exchange Function
+### Currency Exchange Function
   * `currencyFunc()` This simple function changes currency values from USD, Peso, and Euro. The argument is the type currency and what the numerical values are
 ```{r}
 currencyFunc(usd= 2.78)
+currencyFunc(euro=3)
 ```
   
-###Format Function
+### Format Function
    
   * `samelNa()` Changes the number of the rows and add NA's to get two lists of same length. Can be used to make lengths of list the same to better fit into a dataframe.
   
@@ -75,5 +77,5 @@ y<- c(1:9)
 samelNA(x,y)
 ```
   
-##Future Work
+## Future Work
 This package can be used in the future to do a price analysis of similar type of eCommerce stores. For example, one can do a study of the two similar eCommerce stores that sells groceries and clothes like Walmart and Target. To do so you would create a table of their products with my shopScrape function to get a general view. Then you can use the priceAna function to generate a histogram of the products based on their category.

@@ -14,9 +14,6 @@ shopScrape("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQ
 basicPrice("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
 
 ## -----------------------------------------------------------------------------
-currencyFunc(usd= 2.78)
-
-## -----------------------------------------------------------------------------
 priceAna("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
 
 ## -----------------------------------------------------------------------------
@@ -25,8 +22,12 @@ resultsZara <- read_html("https://www.zara.com/us/en/woman-must-haves-l4503.html
 
 
 vals <- priceNum(resultsZara,".price__amount-current")
-vals
 
+
+
+## -----------------------------------------------------------------------------
+currencyFunc(usd= 2.78)
+currencyFunc(euro=3)
 
 ## -----------------------------------------------------------------------------
 x<- c(1:10)
