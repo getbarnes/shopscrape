@@ -11,10 +11,22 @@ library(shopscrape)
 shopScrape("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a","https://www.zara.com/us/en/woman-must-haves-l4503.html?v1=1609213", ".price__amount-current , #main .link span")
 
 ## -----------------------------------------------------------------------------
+basicPrice("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
+
+## -----------------------------------------------------------------------------
 currencyFunc(usd= 2.78)
 
 ## -----------------------------------------------------------------------------
 priceAna("https://www.thereformation.com/categories/new?gclid=CjwKCAiAm7OMBhAQEiwArvGi3EYt2jozZbzQktEYy2iInclcxHpJKKnWfqu3Jo2mHfABJ-R90ghQVhoCmwAQAvD_BwE" , ".product-prices__price span , .product-summary__name a")
+
+## -----------------------------------------------------------------------------
+library(rvest)
+resultsZara <- read_html("https://www.zara.com/us/en/woman-must-haves-l4503.html?v1=1609213")
+
+
+vals <- priceNum(resultsZara,".price__amount-current")
+vals
+
 
 ## -----------------------------------------------------------------------------
 x<- c(1:10)
